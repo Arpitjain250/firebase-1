@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "822496964602",
+    "firebase_url": "https://icu-app-be61d.firebaseio.com",
+    "project_id": "icu-app-be61d",
+    "storage_bucket": "icu-app-be61d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822496964602:android:b610851400289cb1",
+        "android_client_info": {
+          "package_name": "com.icu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822496964602-ttaecgp91pc29ojl1bkhbck7trl1eq08.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh6KJoMko80MkaV7Eadp_orKWgF9_EFFo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
