@@ -1,4 +1,4 @@
-package com.icu;
+package com.icu.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.icu.utils.MessageListAdapter;
+import com.icu.R;
 import com.icu.database.Message;
 import com.icu.database.MessageRepository;
 

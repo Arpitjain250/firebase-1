@@ -1,7 +1,8 @@
-package com.icu;
+package com.icu.activities;
 
 import android.animation.Animator;
 
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -23,12 +24,17 @@ import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.icu.R;
+import com.icu.utils.SharedPreferenceManager;
+
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Boolean isFabOpen = false;
-    private SubmitButton btnLogin;
+    private Button btnLogin;
     private EditText userName, password;
     private boolean isUsername, isPassword;
     private CardView loginPanel, registerPanel;
@@ -41,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        btnLogin = (SubmitButton) findViewById(R.id.btnLogin);
+        btnLogin = (Button) findViewById(R.id.btnLogin);
 
         btnLogin.setOnClickListener(this);
         userName = (EditText) findViewById(R.id.userName);
@@ -119,38 +125,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnLogin:
-                SubmitButton.Params animator = SubmitButton.Params.create()
-                        .duration(500)
-                        .cornerRadius(10)
-                        .width(convertPixelsToDp(200, this))
-                        .height(convertPixelsToDp(50, this))
-                        .color(R.color.colorAccent)
-                        .colorPressed(R.color.colorAccent) // pressed state color
-                        .icon(R.drawable.ic_done); // icon
-                btnLogin.animate(animator);
-                btnLogin.blockTouch();
-
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        setupUsername(userName.getText().toString());
-                        startActivity(new Intent(MainActivity.this, MapActivity.class));
-                        btnLogin.unblockTouch();
-                    }
-                }, 500);
+                animateButton();
                 break;
 
 
         }
-    }
-
-    public static int convertPixelsToDp(float px, Context context) {
-        Resources resources = context.getResources();
-        DisplayMetrics metrics = resources.getDisplayMetrics();
-        float dp = px / ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
-
-        return (int) dp;
     }
 
     @Override
@@ -174,12 +153,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void enableButton() {
         btnLogin.setEnabled(true);
+        btnLogin.setBackground(ContextCompat.getDrawable(this, R.drawable.button_enabled));
+        btnLogin.setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
     }
 
     private void disableButton() {
         btnLogin.setEnabled(false);
         btnLogin.setBackground(ContextCompat.getDrawable(this, R.drawable.button_disabled));
-        //btnLogin.setTextColor(ContextCompat.getColor(this, R.color.colorDisabled));
+        btnLogin.setTextColor(ContextCompat.getColor(this, R.color.colorDisabled));
     }
 
     private void animateCard() {
@@ -301,6 +282,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         animator.setDuration(1000);
         btnLogin.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
         animator.start();
-    }
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                super.onAnimationCancel(animation);
+            }
 
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                btnLogin.setTextColor(getResources().getColor(R.color.white));
+                setupUsername(userName.getText().toString());
+                startActivity(new Intent(MainActivity.this, MapActivity.class));
+
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+            }
+        });
+    }
 }

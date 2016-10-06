@@ -1,4 +1,4 @@
-package com.icu;
+package com.icu.utils;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
+import com.icu.ApplicationLoader;
+import com.icu.R;
 import com.icu.database.Message;
+import com.icu.widgets.CircularImageView;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,7 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorDisabled">#d3d3d3</color>
     <color name="gray">#ffdedede</color>
-    <color name="blue">#ff0099cc</color>
-    <color name="blue_dark">#ff00719b</color>
-    <dimen name="corner_radius">0dp</dimen>
+    <color name="white">#ffffff</color>
 </resources>

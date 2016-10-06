@@ -1,4 +1,4 @@
-package com.icu;
+package com.icu.utils;
 
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;

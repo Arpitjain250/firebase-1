@@ -1,4 +1,4 @@
-package com.icu;
+package com.icu.activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -26,11 +26,14 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.icu.utils.DataListener;
+import com.icu.utils.FirebaseDataAdapter;
+import com.icu.R;
+import com.icu.utils.SharedPreferenceManager;
 import com.icu.database.Message;
 import com.icu.database.MessageRepository;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by sitaram on 10/6/16.

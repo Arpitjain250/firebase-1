@@ -1,4 +1,4 @@
-package com.icu;
+package com.icu.utils;
 
 import com.icu.database.Message;
 

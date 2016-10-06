@@ -1,4 +1,4 @@
-package com.icu;
+package com.icu.widgets;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

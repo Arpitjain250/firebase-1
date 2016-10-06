@@ -1,13 +1,10 @@
-package com.icu;
+package com.icu.utils;
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 import com.icu.database.Message;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class FirebaseDataAdapter<T> {

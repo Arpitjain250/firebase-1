@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley;
 import com.firebase.client.Firebase;
 import com.icu.database.DaoMaster;
 import com.icu.database.DaoSession;
+import com.icu.utils.LruBitmapCache;
 
 /**
  * Created by sitaram on 10/6/16.
