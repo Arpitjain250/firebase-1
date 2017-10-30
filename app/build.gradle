@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId "com.icu"
-        minSdkVersion 21
-        targetSdkVersion 24
+        minSdkVersion 15
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
